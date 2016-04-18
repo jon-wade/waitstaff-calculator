@@ -12,7 +12,7 @@
     <script src="js/myApp.js"></script>
     <title>Waitstaff Calculator</title>
 </head>
-<body>
+<body ng-controller="myCtrl">
     <header>
         <h1>Waitstaff Calculator</h1>
     </header>
@@ -20,14 +20,21 @@
         <h2>Enter the meal details</h2>
         <form id="mealInput" name="mealInput" ng-submit="submit()" novalidate>
             <label for="base-meal-price">Base Meal Price: $</label>
-            <input id="base-meal-price" type="number">
-            <label for="tax-rate">Tax Rate: %</label>
-            <input id="tax-rate" type="number">
-            <label for="tip-percentage" type="number">Tip Percentage: %</label>
-            <input id="tip-percentage" type="number">
+            <input id="base-meal-price" name="baseMealPrice" ng-model="baseMealPrice" required ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
+            <!--<label for="tax-rate">Tax Rate: %</label>-->
+            <!--<input id="tax-rate" type="number">-->
+            <!--<label for="tip-percentage" type="number">Tip Percentage: %</label>-->
+            <!--<input id="tip-percentage" type="number">-->
             <div id="meal-submit">
                 <button id="meal-submit-button">Submit</button>
                 <button id="meal-cancel-button">Cancel</button>
+            </div>
+            <div id="error-messages">
+                <h2 ng-if="mealInput.$invalid">You have errors in your form</h2>
+                <ul id="error-list">
+                    <li ng-if="mealInput.baseMealPrice.$error.required">You need to input a base meal price amount.</li>
+                    <li ng-if="mealInput.baseMealPrice.$error.pattern">You need to input an amount in dollars (and cents if applicable).</li>
+                </ul>
             </div>
         </form>
     </section>
