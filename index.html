@@ -23,19 +23,21 @@
             <input id="base-meal-price" name="baseMealPrice" ng-model="baseMealPrice" required ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
             <label for="tax-rate">Tax Rate: %</label>
             <input id="tax-rate" name="taxRate" ng-model="taxRate" required ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
-            <!--<label for="tip-percentage" type="number">Tip Percentage: %</label>-->
-            <!--<input id="tip-percentage" type="number">-->
+            <label for="tip-percentage" type="number">Tip Percentage: %</label>
+            <input id="tip-percentage" name="tipPecentage" ng-model="tipPercentage" required ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
             <div id="meal-submit">
                 <button id="meal-submit-button">Submit</button>
                 <button id="meal-cancel-button">Cancel</button>
             </div>
-            <div id="error-messages">
+            <div id="error-messages" ng-show="err">
                 <h2 ng-if="mealInput.$invalid">You have errors in your meal form</h2>
                 <ul id="error-list">
                     <li ng-if="mealInput.baseMealPrice.$error.required">You need to input a base meal price amount.</li>
                     <li ng-if="mealInput.baseMealPrice.$error.pattern">You need to input a base meal price amount in dollars (and cents if applicable).</li>
                     <li ng-if="mealInput.taxRate.$error.required">You need to input a tax rate amount.</li>
                     <li ng-if="mealInput.taxRate.$error.pattern">You need to input a tax rate percentage (up to 2 decimal places).</li>
+                    <li ng-if="mealInput.tipPecentage.$error.required">You need to input a tip percentage amount.</li>
+                    <li ng-if="mealInput.tipPecentage.$error.pattern">You need to input a tip percentage (up to 2 decimal places).</li>
                 </ul>
             </div>
         </form>
