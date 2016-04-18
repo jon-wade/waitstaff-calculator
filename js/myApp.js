@@ -28,13 +28,17 @@ angular.module('myApp', [])
                 $scope.averageTip = $scope.tipTotal/$scope.mealCount;
             }
 
-
-
-
             console.log($scope.mealInput);
             console.log($scope.mealInput.baseMealPrice.$error);
             console.log($scope.mealInput.taxRate.$error);
             console.log($scope.mealInput.tipPercentage.$error);
-        }
+        };
+
+        $scope.cancel = function(){
+            console.log('clearing variables');
+            $scope.baseMealPrice=undefined;
+            $scope.taxRate=undefined;
+            $scope.tipPercentage=undefined;
+        };
 
     });
