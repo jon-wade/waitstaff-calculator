@@ -64,15 +64,15 @@
         <ul id="earnings-info-list">
             <li>
                 <span class="label">Tip Total: </span>
-                <span class="value">{data binding here}</span>
+                <span class="value">{{tipTotal | currency}}</span>
             </li>
             <li>
                 <span class="label">Meal Count: </span>
-                <span class="value">{data binding here}</span>
+                <span class="value">{{mealCount}}</span>
             </li>
             <li>
                 <span class="label">Average Tip Per Meal: </span>
-                <span class="value">{data binding here}</span>
+                <span class="value">{{averageTip | currency}}</span>
             </li>
         </ul>
     </section>

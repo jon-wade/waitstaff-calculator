@@ -8,6 +8,9 @@ angular.module('myApp', [])
         $scope.subTotal=0;
         $scope.tip=0;
         $scope.customerTotal=0;
+        $scope.tipTotal=0;
+        $scope.mealCount=0;
+        $scope.averageTip=0;
 
 
         $scope.submit = function(){
@@ -19,6 +22,10 @@ angular.module('myApp', [])
                 $scope.subTotal = ($scope.baseMealPrice*(1+($scope.taxRate/100)));
                 $scope.tip = ($scope.baseMealPrice*($scope.tipPercentage/100));
                 $scope.customerTotal = $scope.subTotal + $scope.tip;
+
+                $scope.tipTotal += $scope.tip;
+                $scope.mealCount++;
+                $scope.averageTip = $scope.tipTotal/$scope.mealCount;
             }
 
 
