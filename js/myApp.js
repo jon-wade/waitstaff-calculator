@@ -36,6 +36,7 @@ angular.module('myApp', [])
 
         $scope.cancel = function(){
             console.log('clearing meal amount variables');
+            $scope.err=false;
             $scope.baseMealPrice=undefined;
             $scope.taxRate=undefined;
             $scope.tipPercentage=undefined;
