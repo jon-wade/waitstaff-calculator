@@ -24,7 +24,7 @@
             <label for="tax-rate">Tax Rate: %</label>
             <input id="tax-rate" name="taxRate" ng-model="taxRate" required ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
             <label for="tip-percentage" type="number">Tip Percentage: %</label>
-            <input id="tip-percentage" name="tipPecentage" ng-model="tipPercentage" required ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
+            <input id="tip-percentage" name="tipPercentage" ng-model="tipPercentage" required ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
             <div id="meal-submit">
                 <button id="meal-submit-button">Submit</button>
                 <button id="meal-cancel-button">Cancel</button>
@@ -47,15 +47,15 @@
         <ul id="customer-charges-list">
             <li>
                 <span class="label">Subtotal</span>
-                <span class="value">{data binding here}</span>
+                <span class="value">{{subTotal | currency}}</span>
             </li>
             <li>
                 <span class="label">Tip</span>
-                <span class="value">{data binding here}</span>
+                <span class="value">{{tip | currency}}</span>
             </li>
             <li>
                 <span class="label">Total</span>
-                <span class="value">{data binding here}</span>
+                <span class="value">{{customerTotal | currency}}</span>
             </li>
         </ul>
     </section>
