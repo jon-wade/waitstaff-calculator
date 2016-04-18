@@ -32,7 +32,7 @@ section#meal-details h2 {
 
 form#mealInput {
     padding-left: 20px;
-    margin-top: 35px;
+    margin-top: 60px;
 }
 
 form#mealInput div {
@@ -69,18 +69,20 @@ button#meal-cancel-button {
 
 section#customer-charges h2, section#earnings-info h2 {
     padding-left: 20px;
+    border-bottom: 2px black solid;
+    padding-bottom: 20px;
 }
 
 section#customer-charges {
     position: relative;
-    top: -360px;
+    top: -385px;
     left: 500px;
 
 }
 
 section#earnings-info {
     position: relative;
-    top: -335px;
+    top: -380px;
     left: 500px;
 }
 
