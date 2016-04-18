@@ -35,10 +35,23 @@ angular.module('myApp', [])
         };
 
         $scope.cancel = function(){
-            console.log('clearing variables');
+            console.log('clearing meal amount variables');
             $scope.baseMealPrice=undefined;
             $scope.taxRate=undefined;
             $scope.tipPercentage=undefined;
         };
+
+        $scope.reset = function(){
+            console.log('resetting all variables');
+            $scope.cancel();
+            $scope.subTotal=0;
+            $scope.tip=0;
+            $scope.customerTotal=0;
+            $scope.tipTotal=0;
+            $scope.mealCount=0;
+            $scope.averageTip=0;
+        }
+
+
 
     });
